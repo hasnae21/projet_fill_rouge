@@ -7,7 +7,7 @@ const App = () => {
   return (
     <div className="flex flex-row">
       <div className="w-1/5 bg-custom-blue">
-        <Favorites />
+        <Favorites/>
       </div>
       <div className="w-4/5">
         <DictionaryApp />

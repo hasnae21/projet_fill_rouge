@@ -6,6 +6,7 @@ const Favorites = () => {
     const [favorites, setFavorites] = useState([]);
     useEffect(() => {
         const fetchData = async () => {
+            console.log()
             const response = await axios.get('/api/favorites/1');
             setFavorites(response.data);
         };
@@ -41,7 +42,7 @@ const Favorites = () => {
                     ))}
                 </ul>
             ) : (
-            <p ClassName="text-custom-white text-2xl p-2 font-bold text-center">No favorites yet.</p>
+            <p className="text-custom-white text-2xl p-2 font-bold text-center">No favorites yet.</p>
             )}
         </div>
     );
