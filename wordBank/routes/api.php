@@ -21,10 +21,14 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 });
 
 
+
 Route::post('login',[FavoriteController::class,'verifyUser']);
 
+
+Route::get('/getItem/{params}',[FavoriteController::class,'getItem']);
 Route::get('/favorites/{id}',[FavoriteController::class,'findById']);
 Route::post('/favorites/{id}',[FavoriteController::class,'store']);
 Route::delete('/favorites/{id}',[FavoriteController::class,'destroy']);
+
 
 Route::get('/favorites/getDuplicateWords',[FavoriteController::class,'getDuplicateWords']);

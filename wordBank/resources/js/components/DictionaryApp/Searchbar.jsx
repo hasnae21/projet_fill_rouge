@@ -23,14 +23,6 @@ const Searchbar = () => {
   const [theme, setTheme] = useState("");
 
   useEffect(() => {
-    if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
-      setTheme("dark");
-    } else {
-      setTheme("light");
-    }
-  }, []);
-
-  useEffect(() => {
     if (theme === "dark") {
       document.querySelector(".class_dark_mode").classList.add("dark");
     } else {

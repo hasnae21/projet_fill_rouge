@@ -20,41 +20,42 @@ class FavoriteController extends Controller
 
 
     // store data in my database "Ajouter un favori"
-    public function store(Request $request,$id)
+    public function store(Request $request, $id)
     {
-
-        error_log('store'. $data);
-
         if (Favorite::where('word', $request->word)->where('user_id', $id)->exists()) {
             return response()->json(['message' => 'Data exists.']);
-        } else {
-
-            $client = new \GuzzleHttp\Client([
-                'verify' => false,
+        }else{
+            $fav = Favorite::create([
+                'word' => $request->word,
+                'user_id' => $id,
             ]);
-
-            $res = $client->request('GET', "https://api.dictionaryapi.dev/api/v2/entries/en/" . $request->word);
-            $data = json_decode($res->getBody(), true);
-
-            foreach ($data as $value) {
-                $favorite = new Favorite();
-                $favorite->user_id = $id;
-                $favorite->word = $value['word'];
-                $favorite->phoneticT = $value['phonetics'][0]['text'] ?? null;
-                $favorite->def = $value['meanings'][0]['definitions'][0]['definition'] ?? null;
-
-                $favorite->syn = $value['meanings'][0]['synonyms'][0] ?? null;
-                $favorite->ano = $value['meanings'][0]['antonyms'][0] ?? null;
-                // $favorite->syn = implode(',', $value['meanings'][0]['definitions'][0]['synonyms'] ?? []);
-                // $favorite->ano = implode(',', $value['meanings'][0]['definitions'][0]['antonyms'] ?? []);
-
-                $favorite->exp = $value['meanings'][0]['definitions'][0]['example'] ?? null;
-                $favorite->save();
-            }
-
-            return response()->json($favorite, 201, ['message' => 'Data stored successfully.']);
-            // response()->json(['message' => 'Data stored successfully.']);
+        return response()->json($fav, 201, ['message' => 'Data stored successfully.']);
         }
+    }
+    
+    // get data from the public API "Search"
+    public function getItem($params)
+    {
+        $client = new \GuzzleHttp\Client([
+            'verify' => false,
+        ]);
+        
+        $res = $client->request('GET', "https://api.dictionaryapi.dev/api/v2/entries/en/" . urlencode($params));
+        $data = json_decode($res->getBody(), true);
+        error_log('getItem'. $data);
+
+        $array = array();
+        foreach ($data as $value) {
+            $array[] = array(
+                "word" => $value['word'] ?? null,
+                "phoneticT" => $value['phonetics'][0]['text'] ?? null,
+                "def" => $value['meanings'][0]['definitions'][0]['definition'] ?? null,
+                "syn" => $value['meanings'][0]['definitions'][0]['synonyms'][0] ?? null,
+                "ano" => $value['meanings'][0]['definitions'][0]['antonyms'][0] ?? null,
+                "exp" => $value['meanings'][0]['definitions'][0]['example'] ?? null
+            );
+        }
+        return $array;
     }
 
 

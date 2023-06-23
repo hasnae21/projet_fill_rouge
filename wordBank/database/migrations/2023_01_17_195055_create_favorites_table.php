@@ -19,11 +19,11 @@ return new class extends Migration
 
         $table->string('word');
 
-            $table->string('phoneticT')->nullable();
-            $table->text('def')->nullable();
-            $table->text('syn')->nullable();
-            $table->text('ano')->nullable();
-            $table->text('exp')->nullable();
+            // $table->string('phoneticT')->nullable();
+            // $table->text('def')->nullable();
+            // $table->text('syn')->nullable();
+            // $table->text('ano')->nullable();
+            // $table->text('exp')->nullable();
         
         $table->timestamps();
         

@@ -12,66 +12,59 @@ class FavoritesTableSeeder extends Seeder
         $data = [
             [
             'user_id' => 1,
-            'word' => 'apple',
-            'phoneticT' => '/ˈæpəl/',
-            'def' => 'the round fruit of a tree of the rose family, which typically has thin red or green skin and crisp flesh',
-            'syn' => 'fruit',
-            'ano' => 'orange',
-            'exp' => 'an apple a day keeps the doctor away',
+            'word' => 'apple'
             ],
             [
             'user_id' => 1,
-            'word' => 'banana',
-            'phoneticT' => '/bəˈnɑːnə/',
-            'def' => 'a long curved fruit which grows in clusters and has soft pulpy flesh and yellow skin when ripe',
-            'syn' => 'fruit',
-            'ano' => 'apple',
-            'exp' => 'he slipped on a banana peel',
+            'word' => 'banana'
             ],
             [
             'user_id' => 2,
-            'word' => 'banana',
-            'phoneticT' => '/bəˈnɑːnə/',
-            'def' => 'a long curved fruit which grows in clusters and has soft pulpy flesh and yellow skin when ripe',
-            'syn' => 'fruit',
-            'ano' => 'apple',
-            'exp' => 'he slipped on a banana peel',
+            'word' => 'banana'
             ],
             [
             'user_id' => 2,
-            'word' => 'work',
-            'phoneticT' => '/bəˈnɑːnə/',
-            'def' => 'a long curved fruit which grows in clusters and has soft pulpy flesh and yellow skin when ripe',
-            'syn' => 'fruit',
-            'ano' => 'apple',
-            'exp' => 'he slipped on a banana peel',
+            'word' => 'work'
             ],
             [
             'user_id' => 3,
-            'word' => 'chocolate',
-            'phoneticT' => '/ˈtʃɒk(ə)lət/',
-            'def' => 'a food made from roasted ground cacao beans, typically sweetened',
-            'syn' => 'candy',
-            'ano' => 'vanilla',
-            'exp' => 'I love dark chocolate',
+            'word' => 'chocolate'
             ],
             [
             'user_id' => 3,
-            'word' => 'banana',
-            'phoneticT' => '/bəˈnɑːnə/',
-            'def' => 'a long curved fruit which grows in clusters and has soft pulpy flesh and yellow skin when ripe',
-            'syn' => 'fruit',
-            'ano' => 'apple',
-            'exp' => 'he slipped on a banana peel',
+            'word' => 'banana'
             ],
             [
             'user_id' => 3,
-            'word' => 'hello',
-            'phoneticT' => '/ˈtʃɒk(ə)lət/',
-            'def' => 'a food made from roasted ground cacao beans, typically sweetened',
-            'syn' => 'candy',
-            'ano' => 'vanilla',
-            'exp' => 'I love dark chocolate',
+            'word' => 'hello'
+            ],
+                        [
+            'user_id' => 4,
+            'word' => 'apple'
+            ],
+            [
+            'user_id' => 4,
+            'word' => 'banana'
+            ],
+            [
+            'user_id' => 3,
+            'word' => 'planet'
+            ],
+            [
+            'user_id' => 3,
+            'word' => 'work'
+            ],
+            [
+            'user_id' => 2,
+            'word' => 'chocolate'
+            ],
+            [
+            'user_id' => 1,
+            'word' => 'hard'
+            ],
+            [
+            'user_id' => 1,
+            'word' => 'hello'
             ],
 
             // Add more data as needed...

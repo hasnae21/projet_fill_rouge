@@ -14,11 +14,7 @@ class Favorite extends Model
 
     protected $fillable = [
         'user_id',
-        'word',
-        'phoneticT',
-        'def',
-        'syn',
-        'ano',
-        'exp',
+        'word'
+
     ];
 }
